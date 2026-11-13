@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kata settings</title>
+  <link rel="stylesheet" href="ui.css">
+  <style>
+    main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+    h1 { font-size: 22px; margin: 0 0 4px; }
+    h2 { font-size: 16px; margin: 32px 0 8px; }
+    .lead { margin: 0 0 8px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+    .field { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 8px 0; }
+    .field + .field { border-top: 1px solid var(--line); }
+    .field small { display: block; color: var(--muted); }
+    .field-pair { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .storage { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    .filter { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+    .filter select { min-width: 200px; }
+    table { width: 100%; border-collapse: collapse; }
+    td { padding: 8px 6px; border-top: 1px solid var(--line); vertical-align: middle; }
+    tr:first-child td { border-top: 0; }
+    td.size { color: var(--muted); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    td.act { text-align: right; width: 150px; }
+    td.act .bar { margin-top: 4px; }
+    .pill { font-size: 12px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--ok); }
+    @media (max-width: 560px) { .field { grid-template-columns: 1fr; } td.act { width: auto; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Kata</h1>
+  <p class="lead muted">Translation runs on your computer. Your text is never sent anywhere. Models download once from Hugging Face and then work offline.</p>
+
+  <h2>Shortcuts</h2>
+  <div class="panel">
+    <div class="field">
+      <div>Translate selected text<small>Or right-click a selection → Translate</small></div>
+      <span id="key-translate-selection"></span>
+    </div>
+    <div class="field">
+      <div>Translate what you typed<small>Replaces the text in the box you're typing in (or just the selected part)</small></div>
+      <span id="key-translate-field"></span>
+    </div>
+    <div class="field">
+      <div class="muted">Change shortcuts at <code>chrome://extensions/shortcuts</code></div>
+      <button id="shortcuts">Open</button>
+    </div>
+  </div>
+
+  <h2>Languages</h2>
+  <div class="panel">
+    <div class="field">
+      <div>Translate selections into<small>The source language is detected automatically</small></div>
+      <select id="targetLang"></select>
+    </div>
+    <div class="field">
+      <div>When translating what I typed</div>
+      <div class="field-pair">
+        <select id="fieldSourceLang" aria-label="From"></select>
+        <span>→</span>
+        <select id="fieldTargetLang" aria-label="To"></select>
+      </div>
+    </div>
+    <div class="field" id="needs" hidden>
+      <div id="needs-text"></div>
+      <button class="primary" id="needs-btn">Download</button>
+    </div>
+  </div>
+
+  <h2>Models</h2>
+  <div class="storage">
+    <p class="muted" style="margin:0">Each model covers one direction, e.g. Indonesian → English. Pairs without a direct model go through English.</p>
+    <span id="usage" class="muted"></span>
+  </div>
+  <div class="filter">
+    <select id="filter" aria-label="Filter by language"></select>
+    <button id="refresh">Refresh</button>
+  </div>
+  <div class="panel" style="padding: 4px 12px"><table><tbody id="rows"></tbody></table></div>
+</main>
+<script src="options.js"></script>
+</body>
+</html>

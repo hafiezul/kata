@@ -1,0 +1,21 @@
+{
+  "name": "kata",
+  "version": "1.0.0",
+  "description": "Chrome extension: private on-device translation with small models",
+  "scripts": {
+    "build": "node build.mjs",
+    "zip": "node build.mjs --zip",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.2"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.7",
+    "esbuild": "^0.28.2",
+    "playwright": "^1.56.1",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "type": "module"
+}

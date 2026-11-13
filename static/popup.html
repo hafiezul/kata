@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kata</title>
+  <link rel="stylesheet" href="ui.css">
+  <style>
+    body { width: 380px; padding: 12px; }
+    .langs { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; }
+    .langs select { flex: 1; min-width: 0; }
+    .swap { padding: 6px 8px; }
+    textarea { width: 100%; resize: vertical; min-height: 84px; display: block; }
+    .row { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+    .row .status { flex: 1; font-size: 12px; min-height: 18px; }
+    .out { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px;
+      min-height: 84px; max-height: 220px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .out:empty::before { content: "Translation appears here"; color: var(--muted); }
+    .bar { margin-top: 4px; display: none; }
+    footer { display: flex; justify-content: space-between; margin-top: 10px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="langs">
+    <select id="src" aria-label="From"></select>
+    <button class="swap" id="swap" title="Swap languages" aria-label="Swap languages">⇄</button>
+    <select id="tgt" aria-label="To"></select>
+  </div>
+  <textarea id="input" placeholder="Type or paste text…" autofocus></textarea>
+  <div class="row">
+    <span class="status muted" id="status"></span>
+    <button class="primary" id="go">Translate</button>
+  </div>
+  <div class="bar" id="bar"><i></i></div>
+  <div class="out" id="out" aria-live="polite"></div>
+  <footer>
+    <button id="copy">Copy</button>
+    <a href="#" id="manage">Models &amp; settings</a>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html>
