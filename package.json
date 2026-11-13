@@ -16,6 +16,7 @@
     "playwright": "^1.56.1",
     "typescript": "^7.0.2"
   },
+  "license": "MIT",
   "private": true,
   "type": "module"
 }

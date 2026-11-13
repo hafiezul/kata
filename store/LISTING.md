@@ -51,7 +51,7 @@ Translate text between languages using translation models that run locally in th
 ## Data usage (privacy practices tab)
 - Collects: **none** of the listed data types.
 - Certify: not sold to third parties; not used for unrelated purposes; not used for creditworthiness.
-- Privacy policy URL: host `store/PRIVACY.md` publicly and paste the link.
+- Privacy policy URL: https://hafiezul.github.io/kata/privacy.html
 
 ## Attribution (put in description footer or an About section)
 Translation models: Opus-MT by Helsinki-NLP (CC-BY 4.0), ONNX conversions by Xenova.

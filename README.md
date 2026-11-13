@@ -63,7 +63,8 @@ Load it: `chrome://extensions` → Developer mode → **Load unpacked** → pick
 2. Register at the [Chrome Web Store developer dashboard](https://chrome.google.com/webstore/devconsole) (one-time US$5 fee).
 3. Upload the zip, then fill in the listing using [`store/LISTING.md`](store/LISTING.md)
    (description, permission justifications, data-use answers).
-4. Host [`store/PRIVACY.md`](store/PRIVACY.md) somewhere public (e.g. GitHub Pages) and paste its URL.
+4. Privacy policy URL: <https://hafiezul.github.io/kata/privacy.html> (served by GitHub Pages from `docs/`;
+   keep [`docs/privacy.html`](docs/privacy.html) in sync with [`store/PRIVACY.md`](store/PRIVACY.md)).
 5. Screenshots: 1280×800 of the popup, the in-page card, and the model manager.
 
 ## Ideas for next versions
@@ -75,3 +76,7 @@ Load it: `chrome://extensions` → Developer mode → **Load unpacked** → pick
   / `en-mul`, or using NLLB (but NLLB is non-commercial).
 - **WebGPU** for faster translation of long pages; whole-page translation.
 - **Glossary** of terms that must not be translated (names, product terms).
+
+## License
+
+Code: [MIT](LICENSE). Translation models: Opus-MT, CC-BY 4.0 (University of Helsinki).
