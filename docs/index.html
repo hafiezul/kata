@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kata – Private Offline Translator</title>
+  <meta name="description" content="A Chrome extension that translates text with small AI models running on your own computer. No servers, no tracking, works offline.">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+<main>
+  <div class="brand">
+    <img src="icon.png" alt="" width="56" height="56">
+    <h1>Kata</h1>
+  </div>
+  <p class="lede">Translation that runs on your computer. Your text never leaves your browser.</p>
+
+  <p>Kata is a Chrome extension that translates with small open-source AI models running inside
+  the browser. There is no server, no account and no tracking. After a one-time download per
+  language, it works offline.</p>
+
+  <div class="card">
+    <h2>What it does</h2>
+    <ul>
+      <li><strong>Translate a selection:</strong> right-click → Translate, or <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>. A card appears next to the text.</li>
+      <li><strong>Translate what you type:</strong> in any text box, <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>Y</kbd> replaces your text with the translation.</li>
+      <li><strong>Quick translate</strong> from the toolbar popup.</li>
+      <li><strong>25 languages</strong>, including English, Indonesian, Chinese, Japanese, Korean, Vietnamese, Thai, Hindi, Arabic, Spanish, French, German and Russian.</li>
+      <li><strong>Download only what you need</strong> (about 110 MB per language direction) and delete models any time.</li>
+    </ul>
+  </div>
+
+  <h2>Privacy</h2>
+  <p>Kata collects nothing. The only network requests are model downloads from Hugging Face,
+  and those never include your text. Read the full <a href="privacy.html">privacy policy</a>.</p>
+
+  <h2>Open source</h2>
+  <p>The source code is on <a href="https://github.com/hafiezul/kata">GitHub</a> under the MIT License.
+  Questions and bug reports go to the <a href="https://github.com/hafiezul/kata/issues">issue tracker</a>.</p>
+
+  <p class="muted">Translation models: <a href="https://github.com/Helsinki-NLP/Opus-MT">Opus-MT</a>
+  by the Language Technology Research Group at the University of Helsinki, licensed
+  <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, in ONNX form via
+  <a href="https://huggingface.co/Xenova">Xenova on Hugging Face</a>.</p>
+
+  <footer>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="https://github.com/hafiezul/kata">Source code</a>
+  </footer>
+</main>
+</body>
+</html>
